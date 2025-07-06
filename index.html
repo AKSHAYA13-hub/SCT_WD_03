@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>SPEED QUIZ</title>
+  <link rel="icon" sizes="64x64" type="image/png" href="icon.png">
+  <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+  <div id="container">
+    <h1>SPEED QUIZ </h1>
+    <p class="subtitle">Test your speed 🕒 and knowledge 🧠 ----></p>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+  </div>
+  <div id="button">
+    <button id="start-btn"  onclick="location.href='quiz-1.html'">START</button>
+  </div>
+  <div id="quiz-container">
+    
+    <div id="options"></div>
+    <button id="next-btn" style="display: none;">Next</button>
+  </div>
+  <script src="script.js">
+    if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log('✅ Service Worker Registered'))
+    .catch(err => console.log('❌ Service Worker Error', err));
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-2</title>
+    <link rel="stylesheet" href="style.css">
+    <a href="index.html"></a>
+    <link rel="icon" sizes="64x64" type="image/png" href="icon.png">
+</head>
+<body>
+    <p>Q-NO:2</p>
+<div class="quiz-container">
+    <h2>Which planet is known as the Red Planet?</h2>
+<div class="options">
+  <button onclick="selectOption(this, true)">Mars</button>
+<button onclick="selectOption(this, false)">Earth</button>
+<button onclick="selectOption(this, false)">Venus</button>
+</div>
+<div class="options-container">
+  <div class="options">
+    <!-- your option buttons -->
+  </div>
+  <button id="next-btn" style="display: none;" onclick="goNext()">Next</button>
+</div>
+</div>
+
+
+<script>
+function selectOption(btn, isCorrect) {
+  const buttons = document.querySelectorAll(".options button");
+  buttons.forEach(b => b.disabled = true);
+
+  if (isCorrect) {
+    btn.style.backgroundColor = '#90ee90';
+    btn.textContent += ' ✅';
+    // update score
+    let score = Number(localStorage.getItem("quizScore")) || 0;
+    localStorage.setItem("quizScore", score + 1);
+  } else {
+    btn.style.backgroundColor = 'red';
+  }
+
+  document.getElementById("next-btn").style.display = "inline-block";
+}
+
+function goNext() {
+  window.location.href = "quiz-3.html";  // or quiz-3.html, etc.
+}
+</script>
+</body>
+</html>

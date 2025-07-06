@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 3</title>
+  <link rel="stylesheet" href="style.css"> <!-- Use your existing CSS -->
+  <a href="index.html"></a>
+  <link rel="icon" sizes="64x64" type="image/png" href="icon.png">
+</head>
+<body>
+    <p>Q-NO:3</p>
+    <div class="quiz-container"></div>
+    <h2> Who wrote 'Romeo and Juliet'?</h2>
+    <div class="options">
+      <button onclick="selectOption(this, true)">Shakespeare</button></span>
+      <button onclick="selectOption(this, false)">Tagore</button>
+      <button onclick="selectOption(this, false)">Tolstoy</button>
+    </div>
+    <div class="options-container">
+  <div class="options">
+    <!-- your option buttons -->
+  </div>
+  <button id="next-btn" style="display: none;" onclick="goNext()">FINISH</button>
+</div>
+</div>
+
+
+  <script>
+    function selectOption(btn, isCorrect) {
+  const buttons = document.querySelectorAll(".options button");
+  buttons.forEach(b => b.disabled = true);
+
+  if (isCorrect) {
+    btn.style.backgroundColor = '#90ee90';
+    btn.textContent += ' ✅';
+    // update score
+    let score = Number(localStorage.getItem("quizScore")) || 0;
+    localStorage.setItem("quizScore", score + 1);
+  } else {
+    btn.style.backgroundColor = 'red';
+  }
+
+  document.getElementById("next-btn").style.display = "inline-block";
+}
+
+function goNext() {
+  window.location.href = "result.html";  // or quiz-3.html, etc.
+}
+  </script>
+</body>
+</html>

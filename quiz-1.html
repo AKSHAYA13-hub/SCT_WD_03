@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <a href="index.html"></a>
+    <title>Question 1</title>
+    <link rel="icon" sizes="64x64" type="image/png" href="icon.png">
+</head>
+<body>
+   <p class="qno">Q-NO:1</p>
+   <div class="quiz-container"></div>
+   <h2>What is 2 + 2?</h2>
+<div class="options" style="font-size: 40px;">
+  <button onclick="selectOption(this, false)">3</button>
+  <button onclick="selectOption(this, true)">4</button>
+  <button onclick="selectOption(this, false)">5</button>
+</div>
+<div class="options-container">
+  <div class="options">
+    <!-- your option buttons -->
+  </div>
+  <button id="next-btn" style="display: none;" onclick="goNext()">Next</button>
+</div>
+</div>
+<script>
+function selectOption(btn, isCorrect) {
+  const buttons = document.querySelectorAll(".options button");
+  buttons.forEach(b => b.disabled = true);
+
+  if (isCorrect) {
+    btn.style.backgroundColor = '#90ee90';
+    btn.textContent += ' ✅';
+    // update score
+    let score = Number(localStorage.getItem("quizScore")) || 0;
+    localStorage.setItem("quizScore", score + 1);
+  } else {
+    btn.style.backgroundColor = 'red';
+  }
+
+  document.getElementById("next-btn").style.display = "inline-block";
+}
+
+function goNext() {
+  window.location.href = "quiz-2.html";  // or quiz-3.html, etc.
+}
+</script>
+</body>
+</html>

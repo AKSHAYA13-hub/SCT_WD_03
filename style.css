@@ -1,0 +1,202 @@
+* {
+      background-color: #FEE715;
+    }
+
+    #container {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 100px 20px 10px 100px;
+      font-size: 4rem;
+      font-family: 'Orbitron', sans-serif;
+      animation: fadeIn 3s ease-in-out;
+      margin-bottom: 1.5rem;
+      height: 80vh;
+      width: 90%;
+    }
+
+   .subtitle {
+    font-size: 1.5rem; /* you can adjust size */
+    color: #101820;    /* or any color you like */
+    margin-bottom: 2rem;
+    animation: typing 3s steps(30, end) forwards,
+    blink 0.7s step-end infinite alternate,
+    subtitleGlow 2s ease-in-out 3s infinite alternate;
+   }
+
+
+   @keyframes blink {
+    from { border-color: transparent; }
+    to { border-color: #101820; }
+   }
+
+   @keyframes subtitleGlow {
+    from { text-shadow: 0 0 5px #FEE715; }
+    to { text-shadow: 0 0 20px #101820; }
+   }
+
+
+    h1{
+      font-family: 'Orbitron' , sans-serif;
+    }
+
+    @keyframes fadeIn {
+       from { opacity: 0; transform: translateY(-20px); }
+       to { opacity: 1; transform: translateY(0); }
+    }
+
+    #start-btn {
+  position: absolute;
+  bottom: 30px;  /* or adjust as needed */
+  right: 30px;   /* move towards right */
+  padding: 1rem 2rem;  /* increase size */
+  font-size: 1.2rem;
+  border: 4px solid #000;
+  border-radius: 10px;
+  background-color: #101820;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;  /* smooth effect */
+}
+
+#start-btn:hover {
+  background-color: #101820;
+  transform: scale(1.2);  /* makes it bigger on hover */
+  color: #bbb;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #00008b;
+}
+
+.options button {
+  margin: 0.5rem;  /* Adds space all around each button */
+  padding: 0.8rem 1.5rem;  /* Optional: make buttons bigger */
+}
+
+.next-btn{
+  top: 30px;
+  right: 100px;
+}
+
+.options-container {
+  position: relative;
+}
+
+#next-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.5rem;
+  border: 2px solid #101820;
+  border-radius: 15px;
+  background-color: #FEE715;
+  color: #101820;
+  cursor: pointer;
+  margin-top: 2rem;  /* space below options */
+  display: block;
+  margin-top: 6rem;
+  margin-left: 4rem;
+}
+
+#next-btn:hover {
+  background-color: #101820;
+  color: #FEE715;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center 
+  
+}
+
+h2 {
+  text-align: center;
+  font-size:xx-large;
+}
+
+p {
+  text-align: left;
+  font-size: x-large;
+  
+}
+
+.options {
+  display: flex;
+  justify-content: center;    /* center horizontally */
+  gap: 1rem;                  /* space between buttons */
+  flex-wrap: wrap;            /* wrap if too many options */
+  margin-top: 1.5rem;  
+}
+
+  .options button {
+  font-size: 1.2rem;         
+  padding: 0.8rem 1.5rem;    
+  border: 2px solid #101820; 
+  border-radius: 8px;        
+  background-color: #FEE715; 
+  color: hsl(210, 33%, 9%);            
+  cursor: pointer;           
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;    
+  gap: 1rem;                  
+  flex-wrap: wrap;            
+ margin-top: 1.5rem;
+  }
+
+.options button:hover {
+  background-color: #101820;
+  color: #FEE715;
+  transform: scale(1.1);     
+}
+
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 5rem;  /* Pushes everything down */
+}
+
+.quiz-container h2 {
+  margin-bottom: 2rem;  /* Space between question and options */
+}
+
+
+#restart {
+  height: 50px;
+  width: 200px;
+  font-size: large;
+  border-radius: 200px;
+  cursor: pointer;
+  background-color: #FEE715;
+  color: #101820;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#restart:hover {
+  transform: scale(1.1);
+  background-color: #101820;
+  color: #FEE715;
+  
+}
